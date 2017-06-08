@@ -1,0 +1,18 @@
+galaxy_info:
+  author: Juan Antonio Osorio Robles
+  description:  Ansible role to rotate fernet keys in a TripleO overcloud. 
+  company: Red Hat Inc.
+  issue_tracker_url: https://github.com/JAORMX/tripleo-fernet-key-rotation/issues
+  license: license (GPLv3, CC-BY, etc)
+
+  min_ansible_version: 1.7
+
+  # Optionally specify the branch Galaxy will use when accessing the GitHub
+  # repo for this role. During role install, if no tags are available,
+  # Galaxy will use this branch. During import Galaxy will access files on
+  # this branch. If travis integration is cofigured, only notification for this
+  # branch will be accepted. Otherwise, in all cases, the repo's default branch
+  # (usually master) will be used.
+  #github_branch:
+
+  galaxy_tags: ['tripleo', 'keystone']

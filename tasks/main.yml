@@ -1,0 +1,33 @@
+---
+- name: Generate new key
+  script: generate_key_yaml.py
+  register: new_key_register
+  run_once: true
+
+- name: Set new key fact
+  set_fact:
+    new_key: "{{ new_key_register.stdout }}"
+
+- name: Get current primary key index
+  shell: ls /etc/keystone/fernet-keys | sort -r | head -1
+  register: current_key_index_register
+
+- name: Set next key index fact
+  set_fact:
+    next_key_index: "{{ current_key_index_register.stdout|int + 1 }}"
+
+- name: Move staged key to new index
+  command: mv /etc/keystone/fernet-keys/0 /etc/keystone/fernet-keys/{{ next_key_index }}
+
+- name: Set new key as staged key
+  copy:
+    content: "{{ new_key }}"
+    dest: /etc/keystone/fernet-keys/0
+    owner: keystone
+    group: keystone
+    mode: 0600
+
+- name: Reload httpd
+  service:
+    name: httpd
+    state: reloaded

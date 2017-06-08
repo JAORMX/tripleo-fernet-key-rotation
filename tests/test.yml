@@ -1,0 +1,5 @@
+---
+- hosts: keystone
+  become: true
+  roles:
+    - tripleo-fernet-keys-rotation
