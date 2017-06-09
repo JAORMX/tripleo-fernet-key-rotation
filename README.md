@@ -7,7 +7,7 @@ overcloud.
 Requirements
 ------------
 
-This requires an already running overcloud and preferably Ansible 1.7 or
+This requires an already running overcloud and preferably Ansible 2.0 or
 higher.
 
 
