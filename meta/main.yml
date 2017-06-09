@@ -15,4 +15,4 @@ galaxy_info:
   # (usually master) will be used.
   #github_branch:
 
-  galaxy_tags: ['tripleo', 'keystone']
+  galaxy_tags: ['tripleo', 'openstack', 'keystone']
