@@ -1,5 +1,5 @@
-Role Name
-=========
+tripleo-fernet-key-rotation
+===========================
 
 This role is meant for doing Keystone Fernet key rotations in a TripleO
 overcloud.
